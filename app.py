@@ -56,19 +56,19 @@ def calculate_gpa(editable_dataframe, currentCGPA, creditCompleted):
     }
     return results
 
-def bar_chart(editable_dataframe, y_range=(2.00, 4.00)):
+def bar_chart(df, y_range=(2.00, 4.00)):
 
-    if "Pointer" not in editable_dataframe.columns:
+    if "Pointer" not in df.columns:
         grade_pointer_local = {
             'A+': 4.00, 'A': 4.00, 'A-': 3.67, 'B+': 3.33, 'B': 3.00, 'B-': 2.67,
             'C+': 2.33, 'C': 2.00, 'C-': 1.67, 'D+': 1.33, 'D': 1.00, 'D-': 0.67, 'E': 0.00
         }
-        editable_dataframe = editable_dataframe.copy()
-        editable_dataframe['Pointer'] = editable_dataframe['Grades'].map(grade_pointer_local)
+        df = editable_dataframe.copy()
+        df['Pointer'] = df['Grades'].map(grade_pointer_local)
 
     
     fig, ax = plt.subplots()
-    ax.bar(editable_dataframe['Subject Code'], editable_dataframe['Pointer'])
+    ax.bar(df['Subject Code'], df['Pointer'])
     ax.set_xlabel("Course")
     ax.set_ylabel("Pointer")
     ax.set_title("Grade pointers this semester")
@@ -146,7 +146,7 @@ with st.form("CGPA form"):
             st.dataframe(results['details'], use_container_width=True)
 
 
-            bar_chart(editable_dataframe)
+            bar_chart(results['details'])
 
     
 
