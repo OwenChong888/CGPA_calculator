@@ -1,0 +1,6 @@
+Start
+    input currentCGPA, creditCompleted, subject_taken, grade_each, credit_each
+    calculate GPA based on credit_each and grade_each
+    calculate CGPA based on currentCGPA, creditCompleted, grade_each, credit_each
+    output CGPA, GPA, graph
+End
