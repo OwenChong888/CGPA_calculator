@@ -20,10 +20,6 @@ A simple web application built with Streamlit to help Universiti Teknologi Malay
 
 ---
 
-## <img width="1892" height="967" alt="image" src="https://github.com/user-attachments/assets/1c19b484-89a7-4c92-b04c-30de51222e3e" />
-
----
-
 ## 🛠️ Tech Stack
 
 * **Streamlit:** For creating and deploying the web app.
