@@ -104,10 +104,25 @@ with st.form("CGPA form"):
 
         # All checks pass
         else:
-            st.success("Your form has been submitted!")
+            st.success("Your result has been calculated!")
             st.balloons()
-            calculate_gpa(editable_dataframe, currentCGPA, creditCompleted)
-            st.write(calculate_gpa(editable_dataframe, currentCGPA, creditCompleted))
+            # 1. Calculate ONCE and store the result
+            results = calculate_gpa(editable_dataframe, currentCGPA, creditCompleted)
+            
+            # 2. Display the results in a clean, user-friendly way
+            st.subheader("Your Results ✨")
+            
+            res_col1, res_col2 = st.columns(2)
+            with res_col1:
+                st.metric(label="Semester GPA", value=f"{results['semester_gpa']:.2f}")
+            with res_col2:
+                st.metric(label="New CGPA", value=f"{results['new_cgpa']:.2f}")
+
+            st.divider()
+            st.subheader("Detailed Breakdown")
+            st.dataframe(results['details'], use_container_width=True)
+
+
 
 
             
