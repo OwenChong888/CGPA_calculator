@@ -1,6 +1,6 @@
-# CGPA Calculator for UTM Students 🎓
+# CGPA Calculator for Students 🎓
 
-A simple web application built with Streamlit to help Universiti Teknologi Malaysia (UTM) students calculate their semester GPA and new CGPA.
+A simple web application built with Streamlit to help students calculate their semester GPA and new CGPA.
 
 **[➡️ Click Here to Use the Live App!]([https://your-streamlit-app-url.streamlit.app](https://cgpacalculator-t26mqbusg52khpk8cxyrjx.streamlit.app/))**
 
